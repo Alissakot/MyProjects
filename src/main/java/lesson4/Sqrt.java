@@ -15,18 +15,22 @@ public class Sqrt {
 
     public static void result() {
         int n = 2;
-        if (value == 1) {
-            System.out.println("корень числа " + 1);
-            return;
-        }
-        while (value >= n * n) {
-            if (n * n == value) {
-                System.out.println("корень числа " + value + " " + n);
-                break;
+        if (value <= 0) {
+            if (value == 1) {
+                System.out.println("корень числа " + 1);
+                return;
             }
-            n++;
-        }
-        if (n * n > value) {
+            while (value >= n * n) {
+                if (n * n == value) {
+                    System.out.println("корень числа " + value + " " + n);
+                    break;
+                }
+                n++;
+            }
+            if (n * n > value) {
+                System.out.println("нет действительных корней");
+            }
+        } else {
             System.out.println("нет действительных корней");
         }
     }
