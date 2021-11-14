@@ -15,7 +15,7 @@ public class Sqrt {
 
     public static void result() {
         int n = 2;
-        if (value <= 0) {
+        if (true) {
             if (value == 1) {
                 System.out.println("корень числа " + 1);
                 return;
