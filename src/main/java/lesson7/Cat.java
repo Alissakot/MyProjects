@@ -26,7 +26,7 @@ public class Cat {
                 }
                 break;
             }
-            case "плавать": {
+            case "плыть": {
                 System.out.println(getName() + " не стал плавать");
                 break;
             }
