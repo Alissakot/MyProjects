@@ -6,29 +6,37 @@ public class Tiger {
     int run;
     int swim;
 
-    public Tiger(String name, int age, int run, int swim) {
+    public String getName() {
+        return name;
+    }
+
+    public Tiger(String name, int age) {
         this.name = name;
         this.age = age;
-        this.run = run;
-        this.swim = swim;
     }
 
-    public void setRunSwim(int run, int swim) {
-        if (run > 1000) {
-            run = 1000;
+    public void runner(String action, int distance) {
+        switch (action) {
+            case "бежать": {
+                if (distance <= 1000 & distance > 0) {
+                    System.out.println(getName() + " пробежал " + distance + " метров");
+                } else if (distance > 1000) {
+                    System.out.println(getName() + " пробежал только 1000 метров");
+                }
+                break;
+            }
+            case "плавать": {
+                if (distance <= 200 & distance > 0) {
+                    System.out.println(getName() + " проплыл " + distance + "метров");
+                } else if (distance > 200) {
+                    System.out.println(getName() + " проплыл только 200 метров");
+                }
+                break;
+            }
+            default: {
+                System.out.println(getName() + " прилег отдохнуть");
+                break;
+            }
         }
-        if (swim > 400) {
-            swim = 400;
-        }
-        this.run = run;
-        this.swim = swim;
-    }
-
-    public int getRun() {
-        return run;
-    }
-
-    public int getSwim() {
-        return swim;
     }
 }
