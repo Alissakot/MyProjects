@@ -1,7 +1,7 @@
 package lesson9;
 
-public class Tracktor extends Machine{
-    private final int moveLimit = 10000;
+public final class Tracktor extends Machine{
+    private final int moveLimit = 1200;
     @Override
     protected void move(int distance) {
         if (distance > 0 & distance <= moveLimit){

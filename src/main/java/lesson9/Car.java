@@ -1,6 +1,6 @@
 package lesson9;
 
-public class Car extends Machine {
+public final class Car extends Machine {
     private final int moveLimit = 1000;
     @Override
     protected void move(int distance) {
