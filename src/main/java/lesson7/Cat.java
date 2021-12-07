@@ -1,10 +1,10 @@
 package lesson7;
 
 public class Cat {
-    String name;
-    int age;
-    int run;
-    int swim;
+    public String name;
+    public int age;
+
+    private final static int runLimit = 200;
 
     public String getName() {
         return name;
@@ -13,15 +13,14 @@ public class Cat {
     public Cat(String name, int age) {
         this.name = name;
         this.age = age;
-
     }
 
     public void runner(String action, int distance) {
         switch (action) {
             case "бежать": {
-                if (distance <= 200 & distance > 0) {
+                if (distance <= runLimit & distance > 0) {
                     System.out.println(getName() + " пробежал " + distance + " метров");
-                } else if (distance > 200) {
+                } else if (distance > runLimit) {
                     System.out.println(getName() + " пробежал только 200 метров");
                 }
                 break;
