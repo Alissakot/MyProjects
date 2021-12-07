@@ -9,8 +9,8 @@ public class AnimalSounder {
         Animal Murka = new Cats("Мурка", 2, "муу");
 
         Animal[] AnimalSounder= new Animal[] {Gavrusha, Bobik, Kesha, Murka};
-        for (Animal animal : AnimalSounder) {
-            System.out.println(animal.getSound());
+        for (Animal anim : AnimalSounder) {
+            System.out.println(anim.getSound());
         }
 
     }
