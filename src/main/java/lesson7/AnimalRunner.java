@@ -5,9 +5,13 @@ public class AnimalRunner {
         Dog Bobik = new Dog("Бобик", 3);
         Cat Gavryusha = new Cat("Гаврюша", 2);
         Tiger Petya = new Tiger("Петя", 5);
-        Bobik.runner("бежать", 300);
-        Gavryusha.runner("плыть", 300);
-        Petya.runner("сидеть", 0);
+
+        Bobik.run(300);
+        Bobik.swim(600);
+        Gavryusha.run(300);
+        Gavryusha.swim(100);
+        Petya.run(500);
+        Petya.swim(0);
     }
 }
 
