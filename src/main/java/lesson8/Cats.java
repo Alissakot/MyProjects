@@ -2,12 +2,14 @@ package lesson8;
 
 public class Cats extends Animal{
 
-    public Cats(String name, int age, String sound) {
-        super(name, age, sound);
+    private static final String sound = "meow";
+
+    protected Cats(String name, int age) {
+        super(name, age);
     }
 
     @Override
-    public String getSound() {
-        return super.getSound();
+    protected String getSound() {
+        return super.getName() + " говорит " + this.sound;
     }
 }

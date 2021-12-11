@@ -1,11 +1,16 @@
 package lesson8;
 
 public class Parrot extends Animal{
-    public Parrot(String name, int age, String sound) {
-        super(name, age, sound);
+
+    private static final String sound = "is so good";
+
+    protected Parrot(String name, int age) {
+        super(name, age);
     }
     @Override
-    public String getSound() {
-        return super.getSound();
+    protected String getSound() {
+        String parrotSound = super.getName();
+        return parrotSound + " говорит " + parrotSound + " " +  this.sound;
     }
+
 }

@@ -1,17 +1,18 @@
 package lesson8;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
     private String sound;
 
-    public Animal(String name, int age, String sound) {
+    protected Animal(String name, int age) {
         this.name = name;
         this.age = age;
-        this.sound = sound;
     }
 
-    public String getSound() {
-        return sound;
+    protected abstract String getSound();
+
+    protected String getName(){
+        return this.name;
     }
 }
