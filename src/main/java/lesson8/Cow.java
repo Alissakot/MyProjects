@@ -4,12 +4,12 @@ public class Cow extends Animal{
 
     private static final String sound = "mua";
 
-    protected Cow(String name, int age) {
+    public Cow(String name, int age) {
         super(name, age);
     }
 
     @Override
-    protected String getSound() {
+    public String getSound() {
         return super.getName() + " говорит " + this.sound;
     }
 }

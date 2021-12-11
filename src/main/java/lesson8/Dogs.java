@@ -4,11 +4,11 @@ public class Dogs extends Animal{
 
     private static final String sound = "woof";
 
-    protected Dogs(String name, int age) {
+    public Dogs(String name, int age) {
         super(name, age);
     }
     @Override
-    protected String getSound() {
+    public String getSound() {
         return super.getName() + " говорит " + this.sound;
     }
 }

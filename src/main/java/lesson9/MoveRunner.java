@@ -13,8 +13,8 @@ public class MoveRunner {
         Car lexus = new Car("лексус", "wsxf6yh9ikr");
         Car bmw = new Car("бмв", "3esx6ty8irt7u");
 
-        Machine[] avtomobili = new Machine[] {vaz, tesla, belorus, uralets, vw, nissan, opel, ford, lexus, bmw};
-        for (Machine avto : avtomobili){
+        Machine[] avtomobili = new Machine[]{vaz, tesla, belorus, uralets, vw, nissan, opel, ford, lexus, bmw};
+        for (Machine avto : avtomobili) {
             int count = (int) (Math.random() * 1000);
             avto.move(count);
         }

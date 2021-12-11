@@ -1,19 +1,19 @@
 package lesson9;
 
 public final class Car extends Machine {
-    private final int moveLimit = 1000;
+    private final int moveLimit = 500;
+
     @Override
-    protected void move(int distance) {
-        if (distance > 0 & distance <= moveLimit){
+    public void move(int distance) {
+        if (distance > 0 & distance <= moveLimit) {
             System.out.println(super.modelName + " проехал " + distance + " километров");
-        }
-        else if (distance <= 0){
+        } else if (distance <= 0) {
             System.out.println(super.modelName + " не поехал");
-        }
-        else {
-            System.out.println(super.modelName + " проехал " + moveLimit + " километров");
+        } else {
+            System.out.println(super.modelName + " проехал только " + moveLimit + " километров");
         }
     }
+
     public Car(String name, String vin) {
         super(name, vin);
     }
