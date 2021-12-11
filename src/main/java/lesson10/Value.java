@@ -1,5 +1,5 @@
 package lesson10;
 
-public enum value {
+public enum Value {
     CELSEUS, FAHRENHEIT, KELVIN;
 }
