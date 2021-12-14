@@ -1,6 +1,6 @@
 package lesson11;
 
-public class Car extends Auto{
+public class Car extends Auto {
 
     private static final String className = "легковой автомобиль";
     private static final int MinSpeed = 40;
@@ -15,14 +15,13 @@ public class Car extends Auto{
     private static final int MaxHeight = 180;
 
 
-
-    public void carRandom(){
-        super.setNumber((int)(Math.random()*1000000));
-        super.setSpeed((int)((Math.random()*(MaxSpeed-MinSpeed))+MinSpeed));
-        super.setWeight((int)((Math.random()*(MaxWeight-MinWeight))+MinWeight));
-        super.setLength((int)((Math.random()*(MaxLength-MinLength))+MinLength));
-        super.setWidth((int)((Math.random()*(MaxWidth-MinWidth))+MinWidth));
-        super.setHeight((int)((Math.random()*(MaxHeight-MinHeight))+MinHeight));
+    public void carRandom() {
+        super.setNumber((int) (Math.random() * 1000000));
+        super.setSpeed((int) ((Math.random() * (MaxSpeed - MinSpeed)) + MinSpeed));
+        super.setWeight((int) ((Math.random() * (MaxWeight - MinWeight)) + MinWeight));
+        super.setLength((int) ((Math.random() * (MaxLength - MinLength)) + MinLength));
+        super.setWidth((int) ((Math.random() * (MaxWidth - MinWidth)) + MinWidth));
+        super.setHeight((int) ((Math.random() * (MaxHeight - MinHeight)) + MinHeight));
 
     }
 
