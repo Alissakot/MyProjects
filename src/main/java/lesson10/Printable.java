@@ -1,6 +1,5 @@
 package lesson10;
 
-
 public interface Printable {
     static void printResult(Value scaleType, double count) {
         switch (scaleType) {

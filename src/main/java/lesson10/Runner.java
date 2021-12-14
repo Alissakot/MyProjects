@@ -7,7 +7,7 @@ public class Runner {
 
         Value originScaleType = Value.FAHRENHEIT;
         Value targetScaleType = Value.KELVIN;
-        double count = 35;
+        double count = 1;
 
         Printable.printResult(originScaleType, count);
         System.out.println("----------||--------");

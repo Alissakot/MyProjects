@@ -8,6 +8,7 @@ public class Converter implements Printable {
             case KELVIN -> executeKelvin(targetScaleType, count);
         }
     }
+
     public static void executeCelseus(Value targetScaleType, double count) {
         switch (targetScaleType) {
             case CELSEUS -> Printable.printResult(targetScaleType, count);
@@ -15,17 +16,19 @@ public class Converter implements Printable {
             case KELVIN -> Printable.printResult(targetScaleType, count + 273.15);
         }
     }
-    public static void executeFahrenheit (Value targetScaleType, double count) {
+
+    public static void executeFahrenheit(Value targetScaleType, double count) {
         switch (targetScaleType) {
-            case CELSEUS -> Printable.printResult(targetScaleType, (count-32)/1.8);
+            case CELSEUS -> Printable.printResult(targetScaleType, (count - 32) / 1.8);
             case FAHRENHEIT -> Printable.printResult(targetScaleType, count);
-            case KELVIN -> Printable.printResult(targetScaleType, (count-32)*5.9+273.15);
+            case KELVIN -> Printable.printResult(targetScaleType, (count - 32) * 5 / 9 + 273.15);
         }
     }
-    public static void executeKelvin (Value targetScaleType, double count) {
+
+    public static void executeKelvin(Value targetScaleType, double count) {
         switch (targetScaleType) {
-            case CELSEUS -> Printable.printResult(targetScaleType, count- 273.15);
-            case FAHRENHEIT -> Printable.printResult(targetScaleType, (count-273.15)*9.5-32);
+            case CELSEUS -> Printable.printResult(targetScaleType, count - 273.15);
+            case FAHRENHEIT -> Printable.printResult(targetScaleType, (count - 273.15) * 9 / 5 + 32);
             case KELVIN -> Printable.printResult(targetScaleType, count);
         }
     }
