@@ -29,9 +29,9 @@ public class PhonebookRunner {
             LinkedList<Phonebook> linkedList = new LinkedList<>();
             for (int i = 1; i <= contactListSize; i++) {
                 Phonebook voidContact = contactList.get(random.nextInt(contactList.size()));
-                if (voidContact.getNumber().equals(next.getNumber())){
+                if (voidContact.getNumber().equals(next.getNumber())) {
                     i--;
-                }else {
+                } else {
                     linkedList.add(voidContact);
                 }
             }
@@ -42,8 +42,8 @@ public class PhonebookRunner {
         for (Iterator<Phonebook> Iterator = contactList.listIterator(); Iterator.hasNext(); ) {
             Phonebook next = Iterator.next();
             List<Phonebook> innerPhonebook = next.getPhonebooks();
-            for (Iterator<Phonebook> InnerIterator = innerPhonebook.listIterator(); InnerIterator.hasNext(); ){
-            Phonebook innerNext = InnerIterator.next();
+            for (Iterator<Phonebook> InnerIterator = innerPhonebook.listIterator(); InnerIterator.hasNext(); ) {
+                Phonebook innerNext = InnerIterator.next();
                 if (contactGroup.containsKey(innerNext)) {
                     contactGroup.put(innerNext, contactGroup.get(innerNext) + 1);
                 } else {

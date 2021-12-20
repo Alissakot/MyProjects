@@ -3,8 +3,8 @@ package lesson14;
 import java.util.*;
 
 public class Phonebook {
-    private String fio;
-    private String number;
+    private final String fio;
+    private final String number;
     private LinkedList<Phonebook> phonebooks;
 
     public void setContacts(LinkedList<Phonebook> contacts) {
@@ -41,8 +41,8 @@ public class Phonebook {
         return Objects.equals(number, phonebook.number);
     }
 
-    public static Map<String,String> fillOperators(){
-        Map<String,String> operators = new HashMap<>();
+    public static Map<String, String> fillOperators() {
+        Map<String, String> operators = new HashMap<>();
         operators.put("Megafon", "921");
         operators.put("Beeline", "905");
         operators.put("Tele2", "952");
@@ -55,7 +55,8 @@ public class Phonebook {
         operators.put("Tele2-msk", "977");
         return operators;
     }
-    public static String generateNumber(Map<String,String> operators){
+
+    public static String generateNumber(Map<String, String> operators) {
         int numMaxLimit = 9999999;
         int numMinLimit = 1000000;
 
@@ -66,7 +67,7 @@ public class Phonebook {
         return "8" + value + (random.nextInt(numMaxLimit - numMinLimit) + numMinLimit);
     }
 
-    public static List createContactList(){
+    public static List createContactList() {
         int contactsCount = 10000;
         int i = 1;
         List<String> familyMan = fillListFamily(true);
@@ -75,47 +76,49 @@ public class Phonebook {
         List<String> nameWoman = fillListName(false);
         List<String> otchestvoMan = fillListOtchestvo(true);
         List<String> otchestvoWoman = fillListOtchestvo(false);
-        Map<String,String> operators = fillOperators();
+        Map<String, String> operators = fillOperators();
         List<Phonebook> contactList = new ArrayList<>();
         Random random = new Random();
         while (i <= contactsCount) {
             contactList.add(new Phonebook(familyMan.get(random.nextInt(familyMan.size())) + " "
                     + nameMan.get(random.nextInt(nameMan.size())) + " "
-                    + otchestvoMan.get(random.nextInt(otchestvoMan.size())), generateNumber (operators)));
+                    + otchestvoMan.get(random.nextInt(otchestvoMan.size())), generateNumber(operators)));
             contactList.add(new Phonebook(familyWoman.get(random.nextInt(familyWoman.size())) + " "
                     + nameWoman.get(random.nextInt(nameWoman.size())) + " "
-                    + otchestvoWoman.get(random.nextInt(otchestvoWoman.size())), generateNumber (operators)));
+                    + otchestvoWoman.get(random.nextInt(otchestvoWoman.size())), generateNumber(operators)));
             i++;
         }
         return contactList;
 
     }
+
     public static List<String> fillListFamily(Boolean sex) {
-    List<String> family= new ArrayList<>();
-    if (sex) {
-        family.add("Иванов");
-        family.add("Петров");
-        family.add("Белов");
-        family.add("Чернов");
-        family.add("Сидоров");
-        family.add("Песков");
-        family.add("Носов");
-        family.add("Гаврилов");
-        family.add("Леонтьев");
-        family.add("Крылов");
-    }else  {
-        family.add("Терентьева");
-        family.add("Витальева");
-        family.add("Петрова");
-        family.add("Гусева");
-        family.add("Лесева");
-        family.add("Прутковская");
-        family.add("Приходько");
-        family.add("Степаненко");
-        family.add("Боброва");
-        family.add("Иванова");}
+        List<String> family = new ArrayList<>();
+        if (sex) {
+            family.add("Иванов");
+            family.add("Петров");
+            family.add("Белов");
+            family.add("Чернов");
+            family.add("Сидоров");
+            family.add("Песков");
+            family.add("Носов");
+            family.add("Гаврилов");
+            family.add("Леонтьев");
+            family.add("Крылов");
+        } else {
+            family.add("Терентьева");
+            family.add("Витальева");
+            family.add("Петрова");
+            family.add("Гусева");
+            family.add("Лесева");
+            family.add("Прутковская");
+            family.add("Приходько");
+            family.add("Степаненко");
+            family.add("Боброва");
+            family.add("Иванова");
+        }
         return family;
-}
+    }
 
     public static List<String> fillListName(Boolean sex) {
         List<String> names = new ArrayList<>();
@@ -130,7 +133,7 @@ public class Phonebook {
             names.add("Виталий");
             names.add("Денис");
             names.add("Александр");
-        }else  {
+        } else {
             names.add("Анастасия");
             names.add("Евгения");
             names.add("Александра");
@@ -140,9 +143,11 @@ public class Phonebook {
             names.add("Екатерина");
             names.add("Инга");
             names.add("Елена");
-            names.add("Ольга");}
+            names.add("Ольга");
+        }
         return names;
     }
+
     public static List<String> fillListOtchestvo(Boolean sex) {
         List<String> Otchestvo = new ArrayList<>();
         if (sex) {
@@ -156,7 +161,7 @@ public class Phonebook {
             Otchestvo.add("Андреевич");
             Otchestvo.add("Александрович");
             Otchestvo.add("Викторович");
-        }else  {
+        } else {
             Otchestvo.add("Ивановна");
             Otchestvo.add("Петровна");
             Otchestvo.add("Павловна");
@@ -166,10 +171,12 @@ public class Phonebook {
             Otchestvo.add("Григорьевна");
             Otchestvo.add("Аркадьевна");
             Otchestvo.add("Борисовна");
-            Otchestvo.add("Николаевна");}
+            Otchestvo.add("Николаевна");
+        }
         return Otchestvo;
     }
-    public static void printContacts (List<Phonebook> contacts){
+
+    public static void printContacts(List<Phonebook> contacts) {
         for (Iterator<Phonebook> Iterator = contacts.listIterator(); Iterator.hasNext(); ) {
             Phonebook next = Iterator.next();
             System.out.println("|||||||||||||||||||||||||||||||||||||||||||||");
@@ -181,7 +188,8 @@ public class Phonebook {
             }
         }
     }
-        public static List<Phonebook> fullContactsList (List<Phonebook> contacts){
+
+    public static List<Phonebook> fullContactsList(List<Phonebook> contacts) {
         List<Phonebook> fullList = new ArrayList<>();
         for (Iterator<Phonebook> Iterator = contacts.listIterator(); Iterator.hasNext(); ) {
             Phonebook next = Iterator.next();
@@ -191,6 +199,6 @@ public class Phonebook {
             }
         }
         return fullList;
-        }
+    }
 
 }
