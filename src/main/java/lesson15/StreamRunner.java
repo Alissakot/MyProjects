@@ -24,7 +24,6 @@ public class StreamRunner {
                         },
                         LinkedHashMap::new
                 ));
-        final long[] i = {0};
         map.forEach((k, v) -> System.out.println(k));
     }
 }
