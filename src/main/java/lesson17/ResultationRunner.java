@@ -7,7 +7,6 @@ import java.util.concurrent.*;
 
 public class ResultationRunner extends Thread {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-
         Random random = new Random();
         ArrayList<Integer> numbers = new ArrayList();
         for (int i = 0; i < 1000000; i++) {
@@ -42,9 +41,8 @@ public class ResultationRunner extends Thread {
         futureMin.join();
         CompletableFuture<Double> futureAverage = CompletableFuture.supplyAsync(() -> {
             double sumList = 0;
-            Iterator<Integer> iterator = numbers.iterator();
-            while (iterator.hasNext()) {
-                sumList += iterator.next();
+            for (Integer number : numbers) {
+                sumList += number;
             }
             return sumList / numbers.size();
         }, executor);
