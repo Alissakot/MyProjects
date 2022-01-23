@@ -12,7 +12,7 @@ public class AccountTest {
     }
     @Test
     public void shouldAccountCanWithdraw (){
-        Account account = new Account(new BigDecimal(5000));
-        Assert.assertEquals(new BigDecimal(3000),account.withdraw(new BigDecimal(2000)));
+        Account account = new Account(new BigDecimal(3000));
+        Assert.assertEquals(new BigDecimal(3000),account.withdraw(new BigDecimal(5000)));
     }
 }

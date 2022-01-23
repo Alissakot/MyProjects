@@ -18,7 +18,12 @@ public class Account {
           }
 
     public BigDecimal withdraw(BigDecimal money) {
-        this.balance = this.balance.subtract(money);
+        if (this.balance.compareTo(money) == -1) {
+            System.out.println("Недостаточно средств на счете. Попробуйте снять сумму меньше");}
+        else{
+            this.balance = this.balance.subtract(money);
+        }
         return this.balance;
         }
+
  }
