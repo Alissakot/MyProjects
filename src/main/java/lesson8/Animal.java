@@ -10,7 +10,7 @@ public abstract class Animal {
         this.age = age;
     }
 
-    protected abstract String getSound();
+    public abstract String getSound();
 
     protected String getName(){
         return this.name;
