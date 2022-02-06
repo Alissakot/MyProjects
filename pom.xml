@@ -23,6 +23,10 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <commons-lang.version>2.5</commons-lang.version>
         <json.version>20140107</json.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
+        <hibernate-core.version>5.4.32.Final</hibernate-core.version>
+        <spring-context.version>5.3.15</spring-context.version>
+        <hibernate-version>5.6.5.Final</hibernate-version>
     </properties>
 
     <dependencies>
@@ -68,6 +72,26 @@
         <version>${junit.version}</version>
         <scope>test</scope>
     </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-context.version}</version>
+        </dependency>
 </dependencies>
     <build>
         <plugins>
