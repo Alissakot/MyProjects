@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="converterFromCelseus" class="lesson25.CelseusImpl">
+        <constructor-arg name="count" value="10"/>
+    </bean>
+    <bean id="converterFromFahrenheit" class="lesson25.FahrenheitImpl">
+        <constructor-arg name="count" value="15"/>
+    </bean>
+    <bean id="converterFromKelvin" class="lesson25.KelvinImpl">
+        <constructor-arg name="count" value="25"/>
+    </bean>
+</beans>

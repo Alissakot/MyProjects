@@ -14,5 +14,7 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
+        <mapping class="lesson24.entity.Authors"/>
+        <mapping class="lesson25.entity.Books"/>
     </session-factory>
 </hibernate-configuration>
