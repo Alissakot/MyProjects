@@ -20,8 +20,7 @@ public class FillBase {
     public static void main(String[] args) throws IOException, CsvException {
         Map<String, Authors> mapAuthors = new HashMap<>();
 
-        try {
-            try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(
+                   try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(
                     Objects.requireNonNull(InputStreamRunner.class.getResourceAsStream("/Authors.csv"))))) {
                 CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
                 CSVReader csvReader = new CSVReaderBuilder(fileReader)
@@ -34,16 +33,12 @@ public class FillBase {
                     saveAuthor(newAuthor);
                     mapAuthors.put(row[1], newAuthor);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        try {
-            try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(
+
+                   try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(
                     Objects.requireNonNull(InputStreamRunner.class.getResourceAsStream("/Books.csv"))))) {
                 CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
                 CSVReader csvReader = new CSVReaderBuilder(fileReader)
@@ -55,13 +50,10 @@ public class FillBase {
                     Books newBook = new Books(row[0], mapAuthors.get(row[1]), row[2], row[3], row[4]);
                     save(newBook);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
     }
 
     public static void saveAuthor(Authors author) {
