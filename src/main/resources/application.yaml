@@ -1,0 +1,8 @@
+spring:
+  main:
+    allow-circular-references: true
+
+application:
+  setting:
+    name: Archivarius
+    locale: ru

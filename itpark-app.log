@@ -1,0 +1,6 @@
+1645565749088:pu
+1645566692599:pack D:\\\\test\\\\1.txt
+1645566875687:unpack pack D:\\\\test\\\\1.txt.zip, D:\\\\test
+1645566916864:unpack D:\\\\test\\\\1.txt.zip, D:\\\\test
+1645566950447:unpack D:\\\\test\\\\1.txt.zip D:\\\\test
+1645566974989:exit
