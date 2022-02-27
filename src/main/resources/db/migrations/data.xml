@@ -1,0 +1,66 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Nadezhda" id="Populate-table-cities">
+        <insert tableName="CITIES">
+            <column name="CITY_NAME" value="Москва" />
+            <column name="CITY_NAME_ON_ENGLISH" value="Moscow" />
+            <column name="POPULATION" value="12561175" />
+            <column name="CITY_CODE" value="495" />
+        </insert>
+
+        <insert tableName="CITIES">
+            <column name="CITY_NAME" value="Санкт-Петербург" />
+            <column name="CITY_NAME_ON_ENGLISH" value="St.Petersburg" />
+            <column name="POPULATION" value="5383890" />
+            <column name="CITY_CODE" value="812" />
+        </insert>
+
+        <insert tableName="CITIES">
+            <column name="CITY_NAME" value="Новосибирск" />
+            <column name="CITY_NAME_ON_ENGLISH" value="Novosibirsk" />
+            <column name="POPULATION" value="1618039" />
+            <column name="CITY_CODE" value="383" />
+        </insert>
+
+        <insert tableName="CITIES">
+            <column name="CITY_NAME" value="Екатеринбург" />
+            <column name="CITY_NAME_ON_ENGLISH" value="Yekaterinburg" />
+            <column name="POPULATION" value="1483119" />
+            <column name="CITY_CODE" value="343" />
+        </insert>
+
+        <insert tableName="CITIES">
+            <column name="CITY_NAME" value="Нижний Новгород" />
+            <column name="CITY_NAME_ON_ENGLISH" value="Nizhny Novgorod" />
+            <column name="POPULATION" value="1253511" />
+            <column name="CITY_CODE" value="8312" />
+        </insert>
+
+        <insert tableName="CITIES">
+            <column name="CITY_NAME" value="Казань" />
+            <column name="CITY_NAME_ON_ENGLISH" value="Kazan" />
+            <column name="POPULATION" value="1251969" />
+            <column name="CITY_CODE" value="8432" />
+        </insert>
+
+        <insert tableName="CITIES">
+            <column name="CITY_NAME" value="Челябинск" />
+            <column name="CITY_NAME_ON_ENGLISH" value="Chelyabinsk" />
+            <column name="POPULATION" value="1200719" />
+            <column name="CITY_CODE" value="351" />
+        </insert>
+
+        <insert tableName="CITIES">
+            <column name="CITY_NAME" value="Омск" />
+            <column name="CITY_NAME_ON_ENGLISH" value="Omsk" />
+            <column name="POPULATION" value="1164815" />
+            <column name="CITY_CODE" value="3812" />
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

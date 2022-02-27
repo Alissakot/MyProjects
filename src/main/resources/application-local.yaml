@@ -1,0 +1,4 @@
+cities:
+  url: jdbc:mysql://localhost:3307/cities
+  login: root
+  password: Pa$$w0rd

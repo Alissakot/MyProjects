@@ -1,0 +1,32 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Nadezhda" id="Create-table-cities">
+        <preConditions>
+            <not>
+                <tableExists tableName="CITIES"/>
+            </not>
+        </preConditions>
+        <createTable tableName="CITIES">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="CITY_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_NAME_ON_ENGLISH" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="POPULATION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_CODE" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
