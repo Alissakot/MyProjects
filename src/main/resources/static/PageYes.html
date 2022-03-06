@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кошачий сайт</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <h1>Какой вы Котуля-красотуля:</h1>
+<ol>
+    <li>
+        <p><b>Как вас зовут?</b></p>
+        <p><input id="inputText" type="text" maxlength="50" size="40" value=""></p>
+    </li>
+
+    <li>
+        <p><b>Какой вы крови?</b></p>
+        <select size="3" multiple name="blood[]">
+            <option value="Мейн-Кун">Мейн-Кун</option>
+            <option selected value="Шотландец">Шотландец</option>
+            <option value="Кинкалоу">Кинкалоу</option>
+            <option value="Перс">Перс</option>
+            <option value="Другой">Другой</option>
+        </select></p>
+    </li>
+    <li>
+        <b>Какая у вас шерстка?</b></p>
+        <p>
+            <input type="checkbox" name="option1" value="a1" checked>Длинная<Br>
+            <input type="checkbox" name="option2" value="a2">Короткая<Br>
+            <input type="checkbox" name="option3" value="a3">Гладкая<Br>
+            <input type="checkbox" name="option4" value="a4">Я лысый<br>
+        </p>
+    </li>
+</ol>
+    <p>
+        <input type="submit" value="Отправить кответы">
+        <div id="errorLabel">Введите ваше имя</div>
+    </p>
+</body>
+</html>
