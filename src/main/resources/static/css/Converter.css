@@ -1,0 +1,22 @@
+
+#title{
+    color: darkred;
+    font-size: 250%;
+    text-align: center;
+    text-decoration: underline;
+    font-family: Courier New, monospace;
+}
+
+#mainText{
+    color: darkblue;
+    font-size: 150%;
+    text-align: center;
+    font-family: FreeMono, monospace;
+}
+#convert {
+    width:200px;
+    height: 40px;
+    font-size: 120%;
+    text-decoration: underline;
+    color: darkred;
+}

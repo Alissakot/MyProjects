@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Конвертер</title>
+  <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/converterLogic.js"></script>
+  <link href="css/Converter.css" type="text/css" rel="stylesheet">
+</head>
+<body bgcolor="silver">
+<div id="title">
+  <h1>Конвертер валют</h1>
+  </div>
+<div id="mainText">
+  <h3>Выберите конвертируемую валюту:</h3>
+  <div>
+    <form>
+      <input id="RubToUSD" type="radio" checked name="question" value="RubToUSD">
+      <label for="RubToUSD">рубли в доллары США</label>
+
+      <input id="RubToEUR" type="radio" name="question" value="RubToEUR">
+      <label for="RubToEUR">рубли в евро</label>
+
+      <input id="EURToRub" type="radio" name="question" value="EURToRub">
+      <label for="EURToRub">евро в рубли</label>
+
+      <input id="USDToRub" type="radio" name="question" value="USDToRub">
+      <label for="USDToRub">доллары США в рубли</label>
+    </form>
+  </div>
+  <div>
+   <p><label for="val">Введите сумму:</label>
+    <input id="val" type="text" name="value"/>
+   </p>
+  </div>
+
+  <div>
+    <button id="convert">Рассчитать</button>
+  </div>
+
+  <div>
+            <span id="result" >
+                Расчет пока не производился
+            </span>
+  </div>
+</div>
+</body>
+</html> 
