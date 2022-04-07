@@ -33,6 +33,8 @@
             <mapstruct.version>1.4.2.Final</mapstruct.version>
             <mapstruct.defaulComponentModel>spring</mapstruct.defaulComponentModel>
             <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+            <swagger.version>2.0.0-rc2</swagger.version>
+            <springdoc-openapi-ui.version>1.6.7</springdoc-openapi-ui.version>
         </properties>
         <parent>
             <groupId>org.springframework.boot</groupId>
@@ -170,6 +172,16 @@
                 <artifactId>mockito-core</artifactId>
                 <version>${mockito-core.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
             </dependency>
         </dependencies>
         <build>

@@ -35,3 +35,12 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
   liquibase:
     change-log: 'classpath:db/migrations/changeLog.xml'
+
+springdoc:
+  packagesToScan: lesson35.controller
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
