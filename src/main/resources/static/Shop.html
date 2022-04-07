@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Четверочка</title>
+    <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/ShopLogic.js"></script>
+</head>
+<body>
+<div id="ShopName">
+    <h1>Продуктовый магазин "Четверочка"</h1>
+</div>
+<div>
+    <label for="id">Введите номер карты покупателя:</label>
+    <input id="id" type="text" name="id"/>
+</div>
+<div>
+    <label for="fio">Введите фамилию и инициалы:</label>
+    <input id="fio" type="text" name="fio"/>
+</div>
+
+<div>
+    <label for="basket">Выберите продукты, которые хотите добавить в корзину:</label>
+    <b id="basket" type="text" name="basket"/>
+        <p>
+            <input type="checkbox" name="option1" id="option1" value="Хлеб" checked>Хлеб<Br>
+            <input type="checkbox" name="option2" id="option2" value="Молоко">Молоко<Br>
+            <input type="checkbox" name="option3" id="option3" value="Конфеты">Конфеты<Br>
+            <input type="checkbox" name="option4" id="option4" value="Яблоки">Яблоки<br>
+        </p>
+
+</div>
+<div>
+    <button id="order">Оформить заказ</button>
+</div>
+<div>
+    <label for="show">Чтобы увидеть информацию о заказе введите номер карты покупателя:</label>
+    <input id="id1" type="text" name="id"/>
+    <button id="show">Посмотреть заказ</button>
+</div>
+
+<div>
+    <label for="chan">Чтобы изменить заказ введите номер карты покупателя:</label>
+    <input id="id2" type="text" name="id"/>
+    <button id="chan">Изменить заказ</button>
+</div>
+    <div>
+        <label for="del">Чтобы удалить заказ введите номер карты покупателя:</label>
+        <input id="id3" type="text" name="id"/>
+        <button id="del">Удалить заказ</button>
+    </div>
+
+</div>
+</body>
+</html>
