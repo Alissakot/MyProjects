@@ -5,6 +5,7 @@ import lesson35.dto.CityDto;
 import lesson35.dto.MainDto;
 import lesson35.service.CityService;
 import lombok.RequiredArgsConstructor;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +37,7 @@ public class CityController {
         return "city/city";
     }
 
+    @Pointcut
     @GetMapping("/city/edit")
     public String currentCity(@RequestParam("id") Long cityId, Model model) {
         CityDto currentCity = cityService.getById(cityId)
