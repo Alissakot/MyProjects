@@ -1,0 +1,20 @@
+spring:
+  main:
+    banner-mode: 'off'
+  application:
+    name: library
+  messages:
+    basename: i18n.messages
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/library
+      database: library
+application:
+  nosql:
+    type: mongo
+
+mongock:
+  runner-type: "ApplicationRunner" # default
+  #runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - lesson40.migration
