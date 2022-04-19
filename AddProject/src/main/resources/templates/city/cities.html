@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of cities</title>
+    <link rel="stylesheet" th:href="@{/css/styleCity.css}" href="/css/styleCity.css">
+    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            fillData();
+        });
+
+        function fillData(page) {
+            $.get('/api/cities' + (page ? '?page=' + page : ''), function (result) {
+                let rowsData = '';
+                for (let i = 0; i < result.length; i++) {
+                    let city = result[i];
+                    rowsData += '<tr><td>' + city.id + '</td>' +
+                        '<td>' + city.city_name + '</td>' +
+                        '<td>' + city.city_name_on_english + '</td>' +
+                        '<td>' + city.population + '</td>' +
+                        '<td>' + city.city_code + '</td>' +
+                        '<td><a href="/city/edit?id=' + city.id + '">Редактировать</a>' +
+                        '<a data-id="city_' + city.id + '" href="city.html">Удалить</a>' +
+                        '</td></tr>';
+                }
+                let cityDataElement = $('#cityData');
+                cityDataElement.html(rowsData);
+                $('a[data-id^=city_]').one('click', function (event) {
+                    if (confirm('Вы точно хотите удалить этот город?')) {
+                        let cityId = $(this).attr('data-id').replace('city_', '');
+                        $.ajax({
+                            url: '/api/cities/' + cityId,
+                            type: 'DELETE',
+                            success: function () {
+                                location.href = '/cities';
+                            }
+                        });
+                    }
+                    event.preventDefault();
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <p id="cities"><strong>Города:</strong></p>
+
+<table class="cities">
+    <thead>
+    <tr id="columns">
+        <th>|Id|</th>
+        <th>|Название|</th>
+        <th>|Название на английском|</th>
+        <th>|Население|</th>
+        <th>|Код города|</th>
+        <th id="actions">Действия</th>
+    </tr>
+    </thead>
+    <tbody id="cityData"/>
+</table>
+<div id="toolbar">
+    <a th:href="@{/}" href="../index.html">Назад|</a>
+    <a th:href="@{/city/add}" href="city.html">Добавить город</a>
+</div>
+</body>
+</html>

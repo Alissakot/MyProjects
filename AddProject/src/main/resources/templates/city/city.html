@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Добавить/редактировать/посмотреть город</title>
+    <link rel="stylesheet" th:href="@{/css/styleCity.css}" href="/css/styleCity.css"/>
+    <script>
+        function editConfirm() {
+            alert('Изменения сохранены')
+        }
+    </script>
+</head>
+<body>
+<form id="add-form" th:action="@{/city/save}" th:if="${city == null}" method="post" action="city.html">
+    <p><strong>Добавить город:</strong></p>
+
+    <div class="row">
+        <label for="add-id-input">Идентификатор:</label>
+        <input id="add-id-input" name="id" type="text" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <label for="add-name-input">Название города:</label>
+        <input id="add-name-input" name="city_name" type="text" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <label for="city_name_on_english-input">Название города на английском языке:</label>
+        <input id="city_name_on_english-input" name="city_name_on_english" type="text" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <label for="population-input">Численность населения:</label>
+        <input id="population-input" name="population" type="text" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <label for="city_code-input">Код города:</label>
+        <input id="city_code-input" name="city_code" type="text" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <a th:href="@{/cities}" href="cities.html"><input type="button" id="buttonBack1" value="Назад"></a>
+        <button type="submit" id="buttonSave1" onclick="editConfirm()">Сохранить</button>
+    </div>
+</form>
+<form id="edit-form" th:action="@{/city/save(id=${city.id})}" th:unless="${city == null}" method="post"
+      action="city.html" th:object="${city}">
+    <p><strong>Информация о городе:</strong></p>
+
+    <div class="row">
+        <label for="id-input">Id:</label>
+        <input id="id-input" type="text" th:value="*{id}" readonly="readonly" value="1"/>
+    </div>
+
+    <div class="row">
+        <label for="edit-name-input">Название города:</label>
+        <input id="edit-name-input" name="city_name" type="text" th:value="*{city_name}" required="required" maxlength="120" value="Москва"/>
+    </div>
+
+    <div class="row">
+        <label for="edit-city_name_on_english-input">Название города на английском языке :</label>
+        <input id="edit-city_name_on_english-input" name="city_name_on_english" type="text" th:value="*{city_name_on_english}" required="required" maxlength="120" value="Moscow"/>
+    </div>
+
+    <div class="row">
+        <label for="edit-population-input">Численность населения:</label>
+        <input id="edit-population-input" name="population" type="text" th:value="*{population}" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <label for="edit-city_code-input">Код города:</label>
+        <input id="edit-city_code-input" name="city_code" type="text" th:value="*{city_code}" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <a th:href="@{/cities}" href="cities.html"><input id="buttonBack" type="button" value="Назад"></a>
+        <button type="submit" id="buttonSave" onclick="editConfirm()">Сохранить</button>
+    </div>
+</form>
+</body>
+</html>

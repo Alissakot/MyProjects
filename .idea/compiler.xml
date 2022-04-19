@@ -8,7 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-      <profile name="Annotation profile for MyProjects" enabled="true">
+      <profile name="Annotation profile for itpark2021" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -17,19 +17,20 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.2.Final/mapstruct-processor-1.4.2.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" />
         </processorPath>
-        <module name="MyProjects" />
         <module name="AddProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AddProject" target="17" />
-      <module name="MyProjects" target="17" />
+      <module name="Base" target="17" />
+      <module name="MyProjects" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AddProject" options="-parameters -Amapstruct.defaultComponentModel=spring" />
-      <module name="MyProjects" options="-parameters -Amapstruct.defaultComponentModel=spring" />
+      <module name="Base" options="" />
+      <module name="MyProjects" options="" />
     </option>
   </component>
 </project>

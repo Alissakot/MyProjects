@@ -2,19 +2,18 @@ spring:
   main:
     banner-mode: 'off'
   application:
-    name: library
+    name: cities
   messages:
     basename: i18n.messages
   data:
     mongodb:
-      uri: mongodb://localhost:27017/library
-      database: library
+      uri: mongodb://localhost:27017/cities
+      database: cities
 application:
   nosql:
     type: mongo
 
 mongock:
-  runner-type: "ApplicationRunner" # default
-  #runner-type: "InitializingBean"
-  change-logs-scan-package:
-    - lesson40.migration
+  runner-type: "ApplicationRunner"
+#  change-logs-scan-package:
+#    - lesson40.migration
