@@ -12,6 +12,7 @@
     <modules>
         <module>addProject</module>
         <module>base</module>
+        <module>lesson43</module>
 
     </modules>
 

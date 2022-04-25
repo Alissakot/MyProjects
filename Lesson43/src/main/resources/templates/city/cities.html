@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of cities</title>
+    <link rel="stylesheet" th:href="@{/css/styleCity.css}" href="/css/styleCity.css">
+    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("a[id^='city']").click(function (event) {
+                if (confirm('Вы точно хотите удалить этот город?')) {
+                    let cityId = $(this).attr('id').replace('city_', '');
+                    $.ajax({
+                        url: '/city/' + cityId,
+                        type: 'DELETE',
+                        success: function (result) {
+                            if (result.success) {
+                                location.href = '/cities';
+                            }
+                        }
+                    });
+                }
+                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+<p id="cities"><strong>Города:</strong></p>
+
+<div id="navigation">
+    <a th:if="${cities.hasPrevious}" th:href="@{/cities(page=${cities.currentPage-1})}" href="cities.html">
+        <input type="button" id="button" value="Назад"></a>
+    Страница <span th:text="${cities.currentPage + 1}">0</span> из <span th:text="${cities.totalPage}">2</span>
+    <a th:if="${cities.hasNext}" th:href="@{/cities(page=${cities.currentPage + 1})}" href="cities.html">
+        <input id="button1" type="button" value="Вперед"></a>
+</div>
+<table class="cities">
+    <thead>
+    <tr id="columns">
+        <th>|Id|</th>
+        <th>|Название|</th>
+        <th>|Название на английском|</th>
+        <th>|Население|</th>
+        <th>|Код города|</th>
+        <th id="actions">Действия</th>
+    </tr>
+    </thead>
+    <tbody id="table">
+    <tr th:each="city: ${cities.data}">
+        <td th:text="${city.id}">1</td>
+        <td th:text="${city.city_Name}">Москва</td>
+        <td th:text="${city.city_Name_On_English}">Moscow</td>
+        <td th:text="${city.population}">6666</td>
+        <td th:text="${city.city_Code}">495</td>
+        <td>
+            <a th:href="@{/city/edit(id=${city.id})}" href="city.html" id="edit">Редактировать</a>
+            <a id="delete-handler" th:id="${city.idStr}" th:name="${city.idStr}" href="cities.html">Удалить</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div id="toolbar">
+    <a th:href="@{/src/test/resources}" href="../index.html">Назад|</a>
+    <a th:href="@{/city/add}" href="city.html">Добавить город</a>
+</div>
+</body>
+</html>

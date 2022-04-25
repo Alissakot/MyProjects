@@ -18,19 +18,28 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" />
         </processorPath>
         <module name="AddProject" />
+        <module name="Lesson43" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Actuator" target="17" />
       <module name="AddProject" target="17" />
+      <module name="AddProject (1)" target="17" />
       <module name="Base" target="17" />
+      <module name="Lesson43" target="17" />
       <module name="MyProjects" target="1.5" />
+      <module name="untitled" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Actuator" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="AddProject" options="-parameters -Amapstruct.defaultComponentModel=spring" />
+      <module name="AddProject (1)" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="Base" options="" />
+      <module name="Lesson43" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="MyProjects" options="" />
+      <module name="untitled" options="-parameters -Amapstruct.defaultComponentModel=spring" />
     </option>
   </component>
 </project>
