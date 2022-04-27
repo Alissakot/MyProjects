@@ -1,5 +1,7 @@
 package lesson43.controller;
 
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.instrument.MeterRegistry;
 import lesson43.annotation.PositiveOrZero;
 import lesson43.dto.CityDto;
 import lesson43.dto.MainDto;
@@ -16,12 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.Positive;
 
-
 @Controller
 @Validated
 @RequiredArgsConstructor
 public class CityController {
-
+    private final MeterRegistry registry;
     private final CityService cityService;
 
     @GetMapping("/cities")
@@ -38,17 +39,20 @@ public class CityController {
         return "city/city";
     }
 
-    @Pointcut
+    @Timed(value = "timer.saves", histogram = true, description = "Time for save city", percentiles = 0.95)
     @GetMapping("/city/edit")
     public String currentCity(@RequestParam("id") Long cityId, Model model) {
         CityDto currentCity = cityService.getById(cityId)
                 .orElseThrow(() -> new IllegalArgumentException("Нет такого города"));
         model.addAttribute("city", currentCity);
+        registry.counter("edit.counter").increment();
         return "city/city";
     }
 
+    @Timed(value = "timer.saves", histogram = true, description = "Time for save city", percentiles = 0.95)
     @PostMapping("/city/save")
     public String saveCity(CityDto city) {
+        registry.counter("save.counter").increment();
         cityService.save(city);
         return "redirect:/cities";
     }

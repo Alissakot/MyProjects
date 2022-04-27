@@ -34,25 +34,13 @@ management:
     web:
       exposure:
         include: "*"
-  #        include: "health, info, metric, prometheus"
   endpoint:
     health:
       show-details: always
   info:
-    # Включает информацию о сборке (spring-boot-maven-plugin)
     build:
       enabled: true
-    # Включает информацию о приложении из application.yml
     env:
       enabled: true
-    # Включает информацию о git (git-commit-id-plugin)
     git:
       mode: "full"
-
-# Собственно, сама информация
-info:
-  app:
-    # Пример фильтрации свойств Maven
-    version: @project.version@
-    author: vivanov
-    description: This is an example description

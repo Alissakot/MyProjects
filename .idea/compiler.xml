@@ -39,7 +39,7 @@
       <module name="Base" options="" />
       <module name="Lesson43" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="MyProjects" options="" />
-      <module name="untitled" options="-parameters -Amapstruct.defaultComponentModel=spring" />
+      <module name="untitled" options="" />
     </option>
   </component>
 </project>
